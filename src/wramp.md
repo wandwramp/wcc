@@ -257,7 +257,7 @@ reg: MULU1(reg,imm)  "\tmultui\t$%c, $%0, %1\n"   1
 
 imm: CNSTI1         "%a"                range(a,0,65535)
 
-reg: ADDI1(reg,imm)   "\taddui\t$%c, $%0, %1\n"  1
+reg: ADDI1(reg,imm)   "\taddi\t$%c, $%0, %1\n"  1
 reg: ADDU1(reg,imm)   "\taddui\t$%c, $%0, %1\n"  1
 reg: BANDI1(reg,imm)  "\tandi\t$%c, $%0, %1\n"   1
 reg: BORI1(reg,imm)   "\tori\t$%c, $%0, %1\n"    1
@@ -265,7 +265,7 @@ reg: BXORI1(reg,imm)  "\txori\t$%c, $%0, %1\n"   1
 reg: BANDU1(reg,imm)  "\tandi\t$%c, $%0, %1\n"   1
 reg: BORU1(reg,imm)   "\tori\t$%c, $%0, %1\n"    1
 reg: BXORU1(reg,imm)  "\txori\t$%c, $%0, %1\n"   1
-reg: SUBI1(reg,imm)   "\tsubui\t$%c, $%0, %1\n"  1
+reg: SUBI1(reg,imm)   "\tsubi\t$%c, $%0, %1\n"  1
 reg: SUBU1(reg,imm)   "\tsubui\t$%c, $%0, %1\n"  1
 
 reg: ADDP1(reg,imm)   "\taddui\t$%c, $%0, %1\n"  1
@@ -813,4 +813,4 @@ Interface wrampIR = {
 
         }
 };
-static char rcsid[] = "$Id: wramp.md,v 1.3 2002/10/25 03:04:05 daa1 Exp $";
+static char rcsid[] = "$Id: wramp.md,v 1.4 2002/10/25 03:09:12 daa1 Exp $";
