@@ -1,6 +1,6 @@
 %{
 #define INTTMP 0x00003f00
-#define INTVAR 0x000000fe
+#define INTVAR 0x000000fc
 
 #define FLTTMP 0x000f0ff0
 #define FLTVAR 0xfff00000
@@ -388,8 +388,10 @@ static void progbeg(int argc, char *argv[]) {
 }
 
 static Symbol rmap(int opk) {
+//       fprintf(stderr, "in rmap\n");
   switch (optype(opk)) {
     case I: case U: case P: case B:
+//    fprintf(stderr, "need integer reg\n");
       return iregw;
     case F:
       return freg2w;
@@ -433,6 +435,9 @@ static void target(Node p) {
 
 static void clobber(Node p) {
   assert(p);
+
+//  fprintf(stderr, "Called clobber()\n");
+
   switch (specific(p->op)) {
     case CALL+F:
       spill(INTRET, IREG, p);
@@ -456,6 +461,8 @@ static void clobber(Node p) {
       spill((1 << 13), IREG, p);
       break;
   }
+
+//  fprintf(stderr, "Done with clobber\n");
 }
 
 static void emit2(Node p) {
@@ -674,7 +681,14 @@ static void segment(int n) {
 }
 
 static void space(int n) {
+int i;
+if (cseg == BSS) {
   print("\t.space\t%d\n", n);
+}
+else {
+  for (i = 0 ; i < n ; i++)
+    print("\n.word\t0\n");
+}
 }
 
 static void blkloop(int dreg, int doff, int sreg, int soff, int size, int tmps[]) {
@@ -799,4 +813,4 @@ Interface wrampIR = {
 
         }
 };
-static char rcsid[] = "$Id: wramp.md,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: wramp.md,v 1.2 2002/10/25 01:22:06 daa1 Exp $";

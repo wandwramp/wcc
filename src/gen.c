@@ -1,6 +1,6 @@
 #include "c.h"
 
-static char rcsid[] = "$Id: gen.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: gen.c,v 1.2 2002/10/25 01:22:06 daa1 Exp $";
 
 #define readsreg(p) \
 	(generic((p)->op)==INDIR && (p)->kids[0]->op==VREG+P)
@@ -652,6 +652,7 @@ static void ralloc(Node p) {
 					assert(sym->x.wildcard || sym != r);
 					mask[r->x.regnode->set] &= ~r->x.regnode->mask;
 				}
+			debug(fprintf(stderr, "Going to getreg\n"));
 			r = getreg(set, mask, p);
 			if (sym->temporary) {
 				Node q;
@@ -669,12 +670,16 @@ static void ralloc(Node p) {
 			debug(dumpregs("(allocating %s to node %x)\n", r->x.name, (char *) p));
 		}
 	}
+	debug(fprintf(stderr, "going to clobber\n"));
 	p->x.registered = 1;
 	(*IR->x.clobber)(p);
+	debug(fprintf(stderr, "done rallocing.\n"));
 }
 static Symbol spillee(Symbol set, unsigned mask[], Node here) {
 	Symbol bestreg = NULL;
 	int bestdist = -1, i;
+
+	//	fprintf(stderr, "In spillee\n");
 
 	assert(set);
 	if (!set->x.wildcard)
@@ -699,9 +704,13 @@ static Symbol spillee(Symbol set, unsigned mask[], Node here) {
 			}
 		}
 	}
+
+	//	fprintf(stderr, "bestreg = %s\n", bestreg->name);
+
 	assert(bestreg); /* Must be able to spill something. Reconfigure the register allocator
 		to ensure that we can allocate a register for all nodes without spilling
 		the node's necessary input regs. */	
+
 	assert(bestreg->x.regnode->vbl == NULL); /* Can't spill register variables because
 		the reload site might be in other blocks. Reconfigure the register allocator
 		to ensure that this register is never allocated to a variable. */
