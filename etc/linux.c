@@ -2,11 +2,11 @@
 
 #include <string.h>
 
-static char rcsid[] = "$Id: linux.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: linux.c,v 1.2 2008/03/18 03:51:44 jpc2 Exp $";
 
 
 #ifndef LCCDIR
-#define LCCDIR "/home/daa1/bin/"
+#define LCCDIR "/home/200/bin/"
 #endif
 
 char *suffixes[] = { ".c", ".i", ".s", ".o", ".out", 0 };
@@ -17,9 +17,9 @@ char *cpp[] = { LCCDIR "wcpp",
 	"-D__unix__", "-D__i386__", "-D__linux__", "-D__signed__=signed",
 	"$1", "$2", "$3", 0 };
 char *include[] = {"-I" LCCDIR "include", "-I" LCCDIR "gcc/include", "-I/usr/include", 0 };
-char *com[] = {LCCDIR "rcc", "-target=wramp", "$1", "$2", "$3", 0 };
-char *as[] = { "/home/daa1/bin/wasm", "-o", "$3", "$1", "$2", 0 };
-char *ld[] = { "/home/daa1/bin/wlink", "-o", "$3", "$1", "$2", 0 };
+char *com[] = { LCCDIR "rcc", "-target=wramp", "$1", "$2", "$3", 0 };
+char *as[] = { LCCDIR "wasm", "-o", "$3", "$1", "$2", 0 };
+char *ld[] = { LCCDIR "wlink", "-o", "$3", "$1", "$2", 0 };
 
 extern char *concat(char *, char *);
 
