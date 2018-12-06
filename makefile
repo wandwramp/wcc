@@ -163,7 +163,8 @@ CPPOBJS=$Bcpp$O $Blexer$O $Bnlist$O $Btokens$O $Bmacro$O $Beval$O \
 $Bwcpp$E:	$(CPPOBJS)
 		$(LD) $(LDFLAGS) -o $@ $(CPPOBJS) 
 
-$(CPPOBJS):	cpp/cpp.h
+$(CPPOBJS):	cpp/cpp.h $Bcpp$O $Blexer$O $Bnlist$O $Btokens$O $Bmacro$O $Beval$O  $Binclude$O $Bhideset$O $Bgetopt$O $Bunix$O
+
 
 $Bcpp$O:	cpp/cpp.c;	$(CC) $(CFLAGS) -c -Icpp -o $@ cpp/cpp.c
 $Blexer$O:	cpp/lex.c;	$(CC) $(CFLAGS) -c -Icpp -o $@ cpp/lex.c
