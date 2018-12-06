@@ -364,7 +364,7 @@ static unsigned emitasm(Node p, int nt) {
 			  assert((atoi(p->syms[0]->x.name) != 0) || p->syms[0]->x.name[0] == '0');
 			}
 		        else if (*fmt == 'H') {
-			  print("0x%x", (strtoul(p->syms[0]->x.name, (char **)NULL, 0) >> 16));
+			  print("0x%x", ((strtoul(p->syms[0]->x.name, (char **)NULL, 0) & 0xffff0000) >> 16));
 			}
 		        else if (*fmt == 'L') {
 			  print("0x%x", (strtoul(p->syms[0]->x.name, (char **)NULL, 0) & 0xffff));
