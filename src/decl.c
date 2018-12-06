@@ -1,6 +1,6 @@
 #include "c.h"
 
-static char rcsid[] = "$Id: decl.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: decl.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 #define add(x,n) (x > inttype->u.sym->u.limits.max.i-(n) ? (overflow=1,x) : x+(n))
 #define chkoverflow(x,n) ((void)add(x,n))

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id: run.sh,v 1.1 2002/07/08 04:28:54 daa1 Exp $
+# $Id: run.sh,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $
 # run .../target/os/tst/foo.s [ remotehost ]
 
 # set -x

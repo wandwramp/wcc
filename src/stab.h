@@ -1,5 +1,5 @@
 /*      @(#)stab.h 1.11 92/05/11 SMI      */
-/* $Id: stab.h,v 1.1 2002/07/08 04:28:54 daa1 Exp $ */
+/* $Id: stab.h,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $ */
 /*
  * Copyright (c) 1990 by Sun Microsystems, Inc.
  */

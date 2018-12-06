@@ -1162,4 +1162,4 @@ Interface solarisIR = {
 
         }
 };
-static char rcsid[] = "$Id: sparc.md,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: sparc.md,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";

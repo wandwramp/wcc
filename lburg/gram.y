@@ -1,7 +1,7 @@
 %{
 #include <stdio.h>
 #include "lburg.h"
-static char rcsid[] = "$Id: gram.y,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: gram.y,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 /*lint -e616 -e527 -e652 -esym(552,yynerrs) -esym(563,yynewstate,yyerrlab) */
 static int yylineno = 0;
 %}

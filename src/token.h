@@ -1,4 +1,4 @@
-/* $Id: token.h,v 1.1 2002/07/08 04:28:54 daa1 Exp $ */
+/* $Id: token.h,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $ */
 /*
 xx(symbol,	value,	prec,	op,	optree,	kind,	string)
 */

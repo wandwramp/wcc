@@ -13,7 +13,7 @@ prof.out format:
 */
 #include "c.h"
 
-static char rcsid[] = "$Id: profio.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: profio.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 struct count {			/* count data: */
 	int x, y;			/* source coordinate */

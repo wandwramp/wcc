@@ -7,7 +7,7 @@
 #include <time.h>
 #include "lburg.h"
 
-static char rcsid[] = "$Id: lburg.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: lburg.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 static char *prefix = "";
 static int Tflag = 0;
 static int ntnumber = 0;

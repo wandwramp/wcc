@@ -1,7 +1,7 @@
 #include "c.h"
 #include <stdio.h>
 
-static char rcsid[] = "$Id: sym.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: sym.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 #define equalp(x) v.x == p->sym.u.c.v.x
 

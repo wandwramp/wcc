@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static char rcsid[] = "$Id: assert.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: assert.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 int _assert(char *e, char *file, int line) {
 	fprintf(stderr, "assertion failed:");

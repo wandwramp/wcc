@@ -2,7 +2,7 @@
 
 #include <string.h>
 
-static char rcsid[] = "$Id: win32.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: win32.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 #ifndef LCCDIR
 #define LCCDIR "\\progra~1\\lcc\\4.1\\bin\\"

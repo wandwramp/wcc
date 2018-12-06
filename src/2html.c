@@ -10,7 +10,7 @@
 #include <io.h>
 #endif
 
-static char rcsid[] = "$Id: 2html.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: 2html.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 static void do_int(int x) {
 	printf("%d", x);

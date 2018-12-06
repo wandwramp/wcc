@@ -1,4 +1,4 @@
-# $Id: makefile.nt,v 1.1 2002/07/08 04:28:54 daa1 Exp $
+# $Id: makefile.nt,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $
 HOSTFILE=etc/win32.c
 TARGET=x86\win32
 TEMPDIR=\\temp
@@ -12,7 +12,7 @@ LDFLAGS=-Zi -MLd -Fd$(BUILDDIR)^\
 B=$(BUILDDIR)^\
 T=$B$(TARGET)\tst^\
 C=$Blcc -Wo-lccdir=$(BUILDDIR) -Wf-target=$(TARGET) -I$B$(TARGET)/include
-# $Id: makefile.nt,v 1.1 2002/07/08 04:28:54 daa1 Exp $
+# $Id: makefile.nt,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $
 
 what:
 	-@echo make all rcc lburg cpp lcc bprint liblcc triple clean clobber

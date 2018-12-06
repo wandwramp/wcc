@@ -1,4 +1,4 @@
-/* $Id: cpp.h,v 1.1 2002/07/08 04:28:54 daa1 Exp $ */
+/* $Id: cpp.h,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $ */
 #define	INS	32768		/* input buffer */
 #define	OBS	4096		/* outbut buffer */
 #define	NARG	32		/* Max number arguments to a macro */

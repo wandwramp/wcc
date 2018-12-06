@@ -1,4 +1,4 @@
-# $Id: makefile,v 1.1 2002/07/08 04:28:54 daa1 Exp $
+# $Id: makefile,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $
 HOSTFILE=etc/linux.c
 BUILDDIR=build
 TEMPDIR=/tmp
@@ -19,7 +19,7 @@ include $(CUSTOM)
 B=$(BUILDDIR)/
 T=$(TSTDIR)/
 
-# $Id: makefile,v 1.1 2002/07/08 04:28:54 daa1 Exp $
+# $Id: makefile,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $
 
 what:
 	-@echo make all rcc lburg wcpp wcc bprint liblcc triple clean clobber

@@ -1,4 +1,4 @@
-/* $Id: config.h,v 1.1 2002/07/08 04:28:54 daa1 Exp $ */
+/* $Id: config.h,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $ */
 
 typedef struct {
 	unsigned char max_unaligned_load;

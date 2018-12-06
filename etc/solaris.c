@@ -2,7 +2,7 @@
 
 #include <string.h>
 
-static char rcsid[] = "$Id: solaris.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: solaris.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 #ifndef LCCDIR
 #define LCCDIR "/usr/local/lib/lcc/"

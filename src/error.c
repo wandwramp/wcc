@@ -1,6 +1,6 @@
 #include "c.h"
 
-static char rcsid[] = "$Id: error.c,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: error.c,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 static void printtoken(void);
 int errcnt   = 0;

@@ -33,7 +33,7 @@ extern void stabsym(Symbol);
 extern void stabtype(Symbol);
 
 static int pflag = 0;
-static char rcsid[] = "$Id: x86linux.md,v 1.1 2002/07/08 04:28:54 daa1 Exp $";
+static char rcsid[] = "$Id: x86linux.md,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $";
 
 #define hasargs(p) (p->syms[0] && p->syms[0]->u.c.v.i > 0 ? 0 : LBURG_MAX)
 %}
