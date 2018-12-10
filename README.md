@@ -14,12 +14,12 @@ Help for `wcc` can be found by running `wcc -h`, but a few particularly
 useful arguments are listed below.
 
 ```
--c	compile only
--o file	leave the output in `file'
--S	compile to assembly language
+-c	        compile only
+-o file	    leave the output in `file'
+-S	        compile to assembly language
 ```
 
-`-c` can be used to manually link the output with files written in assembly.
+`-c` can be used to manually link the output with files written in assembly.  
 `-S` allows you to view the generated code.
 
 ## Building
