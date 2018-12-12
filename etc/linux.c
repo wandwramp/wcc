@@ -6,7 +6,7 @@ static char rcsid[] = "$Id: linux.c,v 1.2 2008/03/18 03:51:44 jpc2 Exp $";
 
 
 #ifndef LCCDIR
-#define LCCDIR "/home/200/bin/"
+#define LCCDIR ""
 #endif
 
 char *suffixes[] = { ".c", ".i", ".s", ".o", ".out", 0 };

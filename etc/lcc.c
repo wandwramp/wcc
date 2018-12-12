@@ -71,9 +71,19 @@ char *tempdir = TEMPDIR;	/* directory for temporary files */
 static char *progname;
 static List lccinputs;		/* list of input directories */
 
+#define BUILD_DIR_BUF 128
+
 main(int argc, char *argv[]) {
 	int i, j, nf;
 	
+	char * buildDir[BUILD_DIR_BUF];
+	readlink("/proc/self/exe", buildDir, BUILD_DIR_BUF); //everything runs from the build dir
+	char * lastSlash = strrchr(buildDir, '/');
+	*(lastSlash + 1) = ':';
+	*(lastSlash + 2) = 0;
+	setenv("PATH", concat(buildDir,getenv("PATH")), 1);
+	//append own directroy to start of PATH, searching local files before consulting PATH
+
 	progname = argv[0];
 	ac = argc + 50;
 	av = alloc(ac*sizeof(char *));
@@ -214,7 +224,7 @@ char *basepath(char *name) {
 #define _P_WAIT 0
 extern int fork(void);
 extern int wait(int *);
-extern void execv(const char *, char *[]);
+extern void execvp(const char *, char *[]);
 
 static int _spawnvp(int mode, const char *cmdname, char *argv[]) {
 	int pid, n, status;
@@ -224,7 +234,7 @@ static int _spawnvp(int mode, const char *cmdname, char *argv[]) {
 		fprintf(stderr, "%s: no more processes\n", progname);
 		return 100;
 	case 0:
-		execv(cmdname, argv);
+		execvp(cmdname, argv);
 		fprintf(stderr, "%s: ", progname);
 		perror(cmdname);
 		fflush(stdout);
@@ -235,6 +245,7 @@ static int _spawnvp(int mode, const char *cmdname, char *argv[]) {
 	if (n == -1)
 		status = -1;
 	if (status&0377) {
+
 		fprintf(stderr, "%s: fatal error in %s\n", progname, cmdname);
 		status |= 0400;
 	}
