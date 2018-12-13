@@ -13,11 +13,14 @@ AR=ar ruv
 RANLIB=ranlib
 DIFF=diff
 RM=rm -f
+DRM=rmdir
 TSTDIR=$(BUILDDIR)/tst
 CUSTOM=custom.mk
 include $(CUSTOM)
 B=$(BUILDDIR)/
 T=$(TSTDIR)/
+
+$(shell mkdir -p $(BUILDDIR))
 
 # $Id: makefile,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $
 
@@ -32,6 +35,7 @@ wcpp:	$Bwcpp$E
 wcc:	$Bwcc$E
 bprint:	$Bbprint$E
 liblcc:	$Bliblcc$A
+
 
 RCCOBJS=$Balloc$O \
 	$Bbind$O \
@@ -245,6 +249,7 @@ clean::		testclean
 clobber::	clean
 		$(RM) $Brcc$E $B2html$E $Bpass2$E $Blburg$E $Bwcpp$E $Bwcc$E $Bbprint$E $B*$A
 		$(RM) $B*.pdb $B*.pch
+		$(DRM) $(BUILDDIR)
 
 RCCSRCS=src/alloc.c \
 	src/bind.c \
