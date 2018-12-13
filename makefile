@@ -13,21 +13,32 @@ AR=ar ruv
 RANLIB=ranlib
 DIFF=diff
 RM=rm -f
-DRM=rmdir
+DRM=rm -rf
 TSTDIR=$(BUILDDIR)/tst
 CUSTOM=custom.mk
 include $(CUSTOM)
 B=$(BUILDDIR)/
 T=$(TSTDIR)/
+ifndef INSTALLDIR
+INSTALLDIR=~/wramp-install/
+endif
+MKDIR=mkdir -p
+COPY=cp
+BUILDBINS=$(B)bprint $(B)lburg $(B)rcc $(B)wcc $(B)wcpp
+INSTALLBINS=$(INSTALLDIR)bprint $(INSTALLDIR)lburg $(INSTALLDIR)rcc $(INSTALLDIR)wcc $(INSTALLDIR)wcpp
 
 $(shell mkdir -p $(BUILDDIR))
 
 # $Id: makefile,v 1.1.1.1 2002/07/08 04:28:54 daa1 Exp $
 
 what:
-	-@echo make all rcc lburg wcpp wcc bprint liblcc triple clean clobber
+	-@echo make all rcc lburg wcpp wcc bprint liblcc triple clean clobber install
 
-all::	rcc lburg wcpp wcc bprint liblcc
+all:: rcc lburg wcpp wcc bprint liblcc
+
+install: all
+	$(MKDIR) $(INSTALLDIR)
+	$(COPY) $(BUILDBINS) $(INSTALLDIR)
 
 rcc:	$Brcc$E
 lburg:	$Blburg$E
@@ -250,6 +261,7 @@ clobber::	clean
 		$(RM) $Brcc$E $B2html$E $Bpass2$E $Blburg$E $Bwcpp$E $Bwcc$E $Bbprint$E $B*$A
 		$(RM) $B*.pdb $B*.pch
 		$(DRM) $(BUILDDIR)
+		$(RM) $(INSTALLBINS)
 
 RCCSRCS=src/alloc.c \
 	src/bind.c \
