@@ -9,7 +9,7 @@ in [CPYRIGHT](CPYRIGHT).
 Using `wcc` requires binaries for `wcpp`, `rcc`, and `wasm` to be either in the
 PATH or in the same directory as the built binaries.
 `wcpp` and `rcc` are built by this project, and `wasm` can be found in
-WRAMPtoolchain.
+wasm.
 
 Help for `wcc` can be found by running `wcc -h`, but a few particularly
 useful arguments are listed below.
