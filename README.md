@@ -6,17 +6,18 @@ in [CPYRIGHT](CPYRIGHT).
 
 ## Usage
 
-Using `wcc` requires binaries for `wcpp`, `rcc`, and `wasm` to be in the
-directory referenced by `LCCDIR`, defined in [linux.c](etc/linux.c).
-`wcpp` and `rcc` are built by this project, and `wasm` can be found in wasm.
+Using `wcc` requires binaries for `wcpp`, `rcc`, and `wasm` to be either in the
+PATH or in the same directory as the built binaries.
+`wcpp` and `rcc` are built by this project, and `wasm` can be found in
+WRAMPtoolchain.
 
 Help for `wcc` can be found by running `wcc -h`, but a few particularly
 useful arguments are listed below.
 
 ```
--c	        compile only
--o file	    leave the output in `file'
--S	        compile to assembly language
+-c          compile only
+-o file     leave the output in `file'
+-S          compile to assembly language
 ```
 
 `-c` can be used to manually link the output with files written in assembly.  
@@ -24,8 +25,8 @@ useful arguments are listed below.
 
 ## Building
 
-First, ensure that `LCCDIR` is defined in [etc/linux.c](etc/linux.c) to a reasonable
-location in which it is possible to place the output binaries.
-A good example is the build/ folder of the `wcc` directory.  
 The [makefile](makefile) contains several build targets, many of which are
 required for `wcc` to run properly. Run `make all` to build everything.
+By default binaries will be placed in a bin folder within the same directory as
+the makefile, otherwise `make install` will place the binaries in the folder 
+specified in the makefile, defaulting to `~/wramp-install/`.
