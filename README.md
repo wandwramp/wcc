@@ -2,7 +2,8 @@
 
 `wcc` is a C compiler targeted at the WRAMP architecture. It is based on
 `lcc`, a retargetable compiler. Copyright information for `lcc` can be found
-in [CPYRIGHT](CPYRIGHT).
+in [CPYRIGHT](CPYRIGHT). Also included in this repo is `rex.h`, a header
+file containning definitions for WRAMP IO structures.
 
 ## Usage
 
